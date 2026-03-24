@@ -1,8 +1,8 @@
-# OpenClaw workspace: Ampersend (x402 agent payments)
+# OpenClaw workspace: ampersend (x402 agent payments)
 
 Template workspace for [OpenClaw](https://docs.openclaw.ai/concepts/agent-workspace) with:
 
-- **[Ampersend](https://www.ampersend.ai/)** — `skills/ampersend/SKILL.md` (source: [ampersend.ai/SKILL.md](https://www.ampersend.ai/SKILL.md)) for **agent-governed x402 HTTP** (`ampersend fetch`) within **user-defined spend limits**.
+- **[ampersend](https://www.ampersend.ai/)** — `skills/ampersend/SKILL.md` (source: [ampersend.ai/SKILL.md](https://www.ampersend.ai/SKILL.md)) for **agent-governed x402 HTTP** (`ampersend fetch`) within **user-defined spend limits**.
 - **Optional [ClawRouter](https://github.com/edgeandnode/ClawRouter)** — `skills/clawrouter/SKILL.md` so the human can route **OpenClaw’s own LLM inference** through BlockRun with **per-request x402 / USDC** (see upstream README for install, wallet funding on Base, and `/model` profiles).
 
 ## What you get
@@ -10,13 +10,13 @@ Template workspace for [OpenClaw](https://docs.openclaw.ai/concepts/agent-worksp
 - OpenClaw bootstrap files: `AGENTS.md`, `SOUL.md`, `USER.md`, `IDENTITY.md`, `TOOLS.md`, `HEARTBEAT.md`, `BOOTSTRAP.md`, `memory/`
 - Workspace skill **`ampersend`** with OpenClaw metadata `requires.bins: ["ampersend"]`
 - Workspace skill **`clawrouter`** (optional) with metadata `requires.config: ["models.providers.blockrun"]` once the plugin is installed and configured
-- Agent instructions wired to prefer `--inspect` before spend (Ampersend), to treat ClawRouter as optional inference x402, and to follow Ampersend’s security rules (no dashboard login on assistant-controlled browsers)
+- Agent instructions wired to prefer `--inspect` before spend (ampersend), to treat ClawRouter as optional inference x402, and to follow ampersend’s security rules (no dashboard login on assistant-controlled browsers)
 
 ## Prerequisites
 
 1. **OpenClaw** installed and a gateway running where you want this workspace.
-2. **Node/npm** on that same host to install the Ampersend CLI globally.
-3. An **Ampersend** account / approval flow completed by the **human** (the agent must not drive dashboard login in a browser it controls).
+2. **Node/npm** on that same host to install the ampersend CLI globally.
+3. An **ampersend** account / approval flow completed by the **human** (the agent must not drive dashboard login in a browser it controls).
 
 ## Install this workspace
 
@@ -24,14 +24,14 @@ Template workspace for [OpenClaw](https://docs.openclaw.ai/concepts/agent-worksp
 2. Point OpenClaw at this folder as the agent workspace, e.g. set `agents.defaults.workspace` in `~/.openclaw/openclaw.json` to this path. See [Agent workspace](https://docs.openclaw.ai/concepts/agent-workspace).
 3. Run `openclaw setup` (or your usual flow) if you need missing files seeded; this repo already includes the standard set.
 
-## Install Ampersend CLI (pinned)
+## Install ampersend CLI (pinned)
 
 ```bash
 npm install -g @ampersend_ai/ampersend-sdk@0.0.12
 ampersend --version
 ```
 
-## Configure Ampersend (human-in-the-loop)
+## Configure ampersend (human-in-the-loop)
 
 Follow `skills/ampersend/SKILL.md`. Short version:
 
@@ -65,7 +65,7 @@ If the human wants **model usage** billed through x402 instead of only using pro
 2. Fund the **Base** USDC balance for the ClawRouter/BlockRun wallet described in the [ClawRouter README](https://github.com/edgeandnode/ClawRouter).
 3. Use `npx @blockrun/clawrouter doctor` if something fails.
 
-**How this pairs with Ampersend:** ClawRouter handles **OpenClaw → LLM provider** traffic for configured `blockrun/*` models. Ampersend handles **arbitrary paid HTTP** you call with `ampersend fetch`. They use different wallet/agent flows; enable either or both.
+**How this pairs with ampersend:** ClawRouter handles **OpenClaw → LLM provider** traffic for configured `blockrun/*` models. ampersend handles **arbitrary paid HTTP** you call with `ampersend fetch`. They use different wallet/agent flows; enable either or both.
 
 ## Customization for real use cases
 
@@ -83,4 +83,4 @@ Pinata’s template guidance: ship a **use case**, not only a skill.
 
 ## License
 
-Add a `LICENSE` file for your org before public release if needed. Skill text is descriptive documentation; comply with Ampersend’s terms when using their CLI and APIs.
+Add a `LICENSE` file for your org before public release if needed. Skill text is descriptive documentation; comply with ampersend’s terms when using their CLI and APIs.

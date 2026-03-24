@@ -9,12 +9,12 @@ metadata: { "openclaw": { "emoji": "🦀", "requires": { "config": ["models.prov
 
 [ClawRouter](https://github.com/edgeandnode/ClawRouter) is the agent-native LLM router for OpenClaw: local routing across many models with **per-request x402 / USDC** payment (non-custodial wallet flow described in the project README). Upstream also publishes under [BlockRunAI/ClawRouter](https://github.com/BlockRunAI/ClawRouter).
 
-This workspace also includes **Ampersend** (`skills/ampersend/SKILL.md`). Those concerns split naturally:
+This workspace also includes **ampersend** (`skills/ampersend/SKILL.md`). Those concerns split naturally:
 
 | Piece | What it pays for |
 | ----- | ---------------- |
 | **ClawRouter** (plugin) | **OpenClaw LLM inference** routed through BlockRun / `blockrun/*` models |
-| **Ampersend** (`ampersend fetch`) | **Arbitrary HTTP** x402 endpoints (APIs, tools) under agent spend limits |
+| **ampersend** (`ampersend fetch`) | **Arbitrary HTTP** x402 endpoints (APIs, tools) under agent spend limits |
 
 The human may enable **one, both, or neither**. Do not assume ClawRouter is installed unless `models.providers.blockrun` is configured or the user says they use BlockRun routing.
 
@@ -45,7 +45,7 @@ Chat shortcuts (when supported): `/model auto`, `/model eco`, `/model premium`, 
 
 ## Funding inference
 
-Per ClawRouter documentation: fund the **Base** USDC balance for the wallet the plugin uses (often auto-generated under `~/.openclaw/blockrun/`). This is **separate** from Ampersend agent keys; the human funds each path they enable.
+Per ClawRouter documentation: fund the **Base** USDC balance for the wallet the plugin uses (often auto-generated under `~/.openclaw/blockrun/`). This is **separate** from ampersend agent keys; the human funds each path they enable.
 
 ## How routing works (summary)
 

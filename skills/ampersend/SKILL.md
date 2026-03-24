@@ -1,12 +1,12 @@
 ---
 name: ampersend
-description: Ampersend CLI for agent payments
+description: ampersend CLI for agent payments
 metadata: { "openclaw": { "requires": { "bins": ["ampersend"] } } }
 ---
 
-# Ampersend CLI
+# ampersend CLI
 
-Ampersend enables autonomous agent payments. Agents can make payments within user-defined spending limits without
+ampersend enables autonomous agent payments. Agents can make payments within user-defined spending limits without
 requiring human approval for each transaction. Payments use stablecoins via the x402 protocol.
 
 This skill requires `ampersend` v0.0.12. Run `ampersend --version` to check your installed version.
@@ -27,8 +27,8 @@ npm install -g @ampersend_ai/ampersend-sdk@0.0.12 --force
 
 ## Security
 
-**IMPORTANT**: NEVER ask the user to sign in to the Ampersend dashboard in a browser to which you have access. If
-configuration changes are needed in Ampersend, ask your user to make them directly.
+**IMPORTANT**: NEVER ask the user to sign in to the ampersend dashboard in a browser to which you have access. If
+configuration changes are needed in ampersend, ask your user to make them directly.
 
 ## Setup
 

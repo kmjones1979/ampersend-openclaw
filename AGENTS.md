@@ -1,17 +1,17 @@
-# AGENTS.md — Ampersend × OpenClaw workspace
+# AGENTS.md — ampersend × OpenClaw workspace
 
 This folder is the agent workspace. Treat it as home and keep secrets out of git.
 
-## Ampersend (x402 / agent payments)
+## ampersend (x402 / agent payments)
 
 - When the user needs **paid HTTP APIs** (x402 / HTTP 402 flows) or **autonomous stablecoin spend within limits**, follow `skills/ampersend/SKILL.md` and use the `ampersend` CLI on the gateway host.
 - **Inspect before spend:** use `ampersend fetch --inspect <url>` when the user wants cost/requirements without paying.
 - **Parse CLI output as JSON:** treat the run as successful only when `ok` is `true`; surface `error.code` / `error.message` on failure.
-- **Security:** never ask the user to sign in to the Ampersend dashboard in a browser you control. If dashboard or policy changes are required, tell them to do it on **their** device/browser. See the skill’s Security section.
+- **Security:** never ask the user to sign in to the ampersend dashboard in a browser you control. If dashboard or policy changes are required, tell them to do it on **their** device/browser. See the skill’s Security section.
 
 ## ClawRouter (optional — inference x402)
 
-- When the human enables **[ClawRouter](https://github.com/edgeandnode/ClawRouter)**, OpenClaw can route **its own LLM calls** through BlockRun with **x402 / USDC** per the plugin (see `skills/clawrouter/SKILL.md`). This is **optional** and distinct from Ampersend: ClawRouter pays **inference**; Ampersend’s CLI pays **other HTTP** APIs via `ampersend fetch`.
+- When the human enables **[ClawRouter](https://github.com/edgeandnode/ClawRouter)**, OpenClaw can route **its own LLM calls** through BlockRun with **x402 / USDC** per the plugin (see `skills/clawrouter/SKILL.md`). This is **optional** and distinct from ampersend: ClawRouter pays **inference**; ampersend’s CLI pays **other HTTP** APIs via `ampersend fetch`.
 - Do not assume the plugin is installed. If model calls fail or the user asks how to pay for models with USDC, point them at `skills/clawrouter/SKILL.md` (install, `openclaw models set blockrun/auto`, fund Base USDC, `openclaw gateway restart` as needed).
 - Never commit or paste **wallet private keys** or `BLOCKRUN_WALLET_KEY` into the workspace; keep secrets in the host environment or OpenClaw’s secure config only.
 

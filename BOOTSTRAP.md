@@ -1,8 +1,8 @@
 # BOOTSTRAP.md — First run
 
-You are booting a workspace built for **Ampersend** (x402 agent payments) on **OpenClaw**.
+You are booting a workspace built for **ampersend** (x402 agent payments) on **OpenClaw**.
 
-## 1) Human: Ampersend CLI (gateway machine)
+## 1) Human: ampersend CLI (gateway machine)
 
 On the host where OpenClaw runs (same place shell commands execute):
 
@@ -43,7 +43,7 @@ openclaw gateway restart
 
 Then fund **Base USDC** for the ClawRouter wallet (see project README — do not store keys in this git repo).
 
-This is **separate** from Ampersend: ClawRouter covers **inference**; Ampersend covers **`ampersend fetch`** to arbitrary x402 HTTP endpoints.
+This is **separate** from ampersend: ClawRouter covers **inference**; ampersend covers **`ampersend fetch`** to arbitrary x402 HTTP endpoints.
 
 ## 3) You + human: identity
 

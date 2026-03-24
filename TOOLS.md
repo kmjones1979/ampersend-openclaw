@@ -2,7 +2,7 @@
 
 Skills describe *how* tools work. This file is for **your** environment: names, URLs, policies, and reminders.
 
-## Ampersend
+## ampersend
 
 - CLI install: see `skills/ampersend/SKILL.md` (pinned version).
 - After setup: `ampersend config status` should show a ready agent.
@@ -29,7 +29,7 @@ Only if the human installed the plugin and uses `blockrun/*` models — see `ski
 - Base USDC funding notes: (where they buy/send; rough budget — no keys here)
 - Proxy / env overrides: `BLOCKRUN_PROXY_PORT`, `CLAWROUTER_DISABLED`, etc. if non-default
 
-**Reminder:** inference is paid through ClawRouter’s wallet flow; **other** x402 APIs still go through **Ampersend** unless the human standardizes differently.
+**Reminder:** inference is paid through ClawRouter’s wallet flow; **other** x402 APIs still go through **ampersend** unless the human standardizes differently.
 
 ---
 
