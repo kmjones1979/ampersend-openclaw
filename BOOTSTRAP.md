@@ -29,22 +29,6 @@ Point OpenClaw at this directory (or copy these files into `~/.openclaw/workspac
 
 Ensure the **`ampersend` binary** is on `PATH` for the gateway process (OpenClaw skill metadata requires `bins: ["ampersend"]`).
 
-## 2b) Optional: ClawRouter (LLM inference via x402 / USDC)
-
-Skip unless the human wants OpenClaw to pay for **model calls** through BlockRun instead of (or in addition to) classic API keys.
-
-Follow `skills/clawrouter/SKILL.md`. Typical flow:
-
-```bash
-openclaw plugins install @blockrun/clawrouter
-openclaw models set blockrun/auto
-openclaw gateway restart
-```
-
-Then fund **Base USDC** for the ClawRouter wallet (see project README — do not store keys in this git repo).
-
-This is **separate** from ampersend: ClawRouter covers **inference**; ampersend covers **`ampersend fetch`** to arbitrary x402 HTTP endpoints.
-
 ## 3) You + human: identity
 
 Have a short conversation and then update:

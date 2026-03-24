@@ -9,12 +9,6 @@ This folder is the agent workspace. Treat it as home and keep secrets out of git
 - **Parse CLI output as JSON:** treat the run as successful only when `ok` is `true`; surface `error.code` / `error.message` on failure.
 - **Security:** never ask the user to sign in to the ampersend dashboard in a browser you control. If dashboard or policy changes are required, tell them to do it on **their** device/browser. See the skill’s Security section.
 
-## ClawRouter (optional — inference x402)
-
-- When the human enables **[ClawRouter](https://github.com/edgeandnode/ClawRouter)**, OpenClaw can route **its own LLM calls** through BlockRun with **x402 / USDC** per the plugin (see `skills/clawrouter/SKILL.md`). This is **optional** and distinct from ampersend: ClawRouter pays **inference**; ampersend’s CLI pays **other HTTP** APIs via `ampersend fetch`.
-- Do not assume the plugin is installed. If model calls fail or the user asks how to pay for models with USDC, point them at `skills/clawrouter/SKILL.md` (install, `openclaw models set blockrun/auto`, fund Base USDC, `openclaw gateway restart` as needed).
-- Never commit or paste **wallet private keys** or `BLOCKRUN_WALLET_KEY` into the workspace; keep secrets in the host environment or OpenClaw’s secure config only.
-
 ## First run
 
 If `BOOTSTRAP.md` exists, follow it, then delete it when finished.
@@ -52,7 +46,7 @@ You are not the user’s voice. Do not leak private context. Prefer short, usefu
 
 ## Tools
 
-Skills define tools. Use `skills/ampersend/SKILL.md` for agent x402 HTTP; use `skills/clawrouter/SKILL.md` when the human opts into BlockRun/ClawRouter for **inference**. Keep host-specific notes (API URLs, spend policies, wallets, test endpoints) in `TOOLS.md`.
+Skills define tools. Use `skills/ampersend/SKILL.md` for agent x402 HTTP. Keep host-specific notes (API URLs, spend policies, test endpoints) in `TOOLS.md`.
 
 ## Heartbeats
 

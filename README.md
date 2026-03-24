@@ -3,14 +3,12 @@
 Template workspace for [OpenClaw](https://docs.openclaw.ai/concepts/agent-workspace) with:
 
 - **[ampersend](https://www.ampersend.ai/)** — `skills/ampersend/SKILL.md` (source: [ampersend.ai/SKILL.md](https://www.ampersend.ai/SKILL.md)) for **agent-governed x402 HTTP** (`ampersend fetch`) within **user-defined spend limits**.
-- **Optional [ClawRouter](https://github.com/edgeandnode/ClawRouter)** — `skills/clawrouter/SKILL.md` so the human can route **OpenClaw’s own LLM inference** through BlockRun with **per-request x402 / USDC** (see upstream README for install, wallet funding on Base, and `/model` profiles).
 
 ## What you get
 
 - OpenClaw bootstrap files: `AGENTS.md`, `SOUL.md`, `USER.md`, `IDENTITY.md`, `TOOLS.md`, `HEARTBEAT.md`, `BOOTSTRAP.md`, `memory/`
 - Workspace skill **`ampersend`** with OpenClaw metadata `requires.bins: ["ampersend"]`
-- Workspace skill **`clawrouter`** (optional) with metadata `requires.config: ["models.providers.blockrun"]` once the plugin is installed and configured
-- Agent instructions wired to prefer `--inspect` before spend (ampersend), to treat ClawRouter as optional inference x402, and to follow ampersend’s security rules (no dashboard login on assistant-controlled browsers)
+- Agent instructions wired to prefer `--inspect` before spend and to follow ampersend’s security rules (no dashboard login on assistant-controlled browsers)
 
 ## Prerequisites
 
@@ -56,16 +54,6 @@ ampersend setup start --name "my-openclaw-agent" --daily-limit "1000000" --auto-
 - **Config:** `ampersend config status` and `ampersend config set ...` as documented in the skill
 
 All CLI output is JSON; check `"ok": true` before treating a run as success.
-
-## Optional: ClawRouter (inference paid with USDC / x402)
-
-If the human wants **model usage** billed through x402 instead of only using provider API keys:
-
-1. Follow `skills/clawrouter/SKILL.md` (install plugin, set e.g. `openclaw models set blockrun/auto`, restart gateway).
-2. Fund the **Base** USDC balance for the ClawRouter/BlockRun wallet described in the [ClawRouter README](https://github.com/edgeandnode/ClawRouter).
-3. Use `npx @blockrun/clawrouter doctor` if something fails.
-
-**How this pairs with ampersend:** ClawRouter handles **OpenClaw → LLM provider** traffic for configured `blockrun/*` models. ampersend handles **arbitrary paid HTTP** you call with `ampersend fetch`. They use different wallet/agent flows; enable either or both.
 
 ## Customization for real use cases
 
