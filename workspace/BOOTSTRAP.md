@@ -25,7 +25,7 @@ ampersend config status
 
 ## 2) Human: OpenClaw workspace
 
-Point OpenClaw at this directory (or copy these files into `~/.openclaw/workspace`). See [Agent workspace](https://docs.openclaw.ai/concepts/agent-workspace) and set `agents.defaults.workspace` in `~/.openclaw/openclaw.json` if needed.
+This folder is the OpenClaw workspace root (in the git repo it lives at `workspace/`). Set `agents.defaults.workspace` to this path — not the parent repo root. See [Agent workspace](https://docs.openclaw.ai/concepts/agent-workspace).
 
 Ensure the **`ampersend` binary** is on `PATH` for the gateway process (OpenClaw skill metadata requires `bins: ["ampersend"]`).
 
