@@ -4,4 +4,4 @@
 **/*.key
 **/*.pem
 **/secrets*
-memory/heartbeat-state.json
+workspace/memory/heartbeat-state.json
