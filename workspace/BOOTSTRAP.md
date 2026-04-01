@@ -7,7 +7,7 @@ You are booting a workspace built for **ampersend** (x402 agent payments) on **O
 On the host where OpenClaw runs (same place shell commands execute):
 
 ```bash
-npm install -g @ampersend_ai/ampersend-sdk@0.0.12
+npm install -g @ampersend_ai/ampersend-sdk@0.0.14
 ampersend --version
 ```
 

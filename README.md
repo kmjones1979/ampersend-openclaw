@@ -28,7 +28,7 @@ Point `agents.defaults.workspace` at **`…/workspace`** (this repo’s `workspa
 ## ampersend CLI
 
 ```bash
-npm install -g @ampersend_ai/ampersend-sdk@0.0.12
+npm install -g @ampersend_ai/ampersend-sdk@0.0.14
 ampersend --version
 ```
 
