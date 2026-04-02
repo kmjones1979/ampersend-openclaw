@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@ampersend_ai/ampersend-sdk": "0.0.16"
+  }
+}

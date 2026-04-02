@@ -5,3 +5,4 @@
 **/*.pem
 **/secrets*
 workspace/memory/heartbeat-state.json
+workspace/node_modules/

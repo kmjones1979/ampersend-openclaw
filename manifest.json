@@ -37,7 +37,7 @@
   },
   "secrets": [],
   "scripts": {
-    "build": "npm install -g @ampersend_ai/ampersend-sdk@0.0.14"
+    "build": "npm install -g @ampersend_ai/ampersend-sdk@0.0.16"
   },
   "tasks": [
     {
